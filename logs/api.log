@@ -1,0 +1,7 @@
+2022-06-21 22:02:00,814 - [DEBUG] -.api_logger - (views.py).api_posts_all(42) - All posts requested
+2022-06-21 22:07:57,599 - [DEBUG] -.api_logger - (views.py).api_posts_single(53) - Appeal to the post 2
+2022-06-21 22:08:01,099 - [DEBUG] -.api_logger - (views.py).api_posts_single(51) - Referring to a non-existent post 111
+2022-06-21 22:08:05,097 - [DEBUG] -.api_logger - (views.py).api_posts_single(53) - Appeal to the post 5
+2022-06-21 22:08:08,661 - [DEBUG] -.api_logger - (views.py).api_posts_all(42) - All posts requested
+2022-06-21 22:08:40,514 - [DEBUG] -.api_logger - (views.py).api_posts_all(42) - All posts requested
+2022-06-21 22:08:42,378 - [DEBUG] -.api_logger - (views.py).api_posts_single(53) - Appeal to the post '2'
