@@ -26,25 +26,31 @@ comment_dao = CommentDAO(DATA_PATH_COMMENTS)
 
 @bp_posts.route("/")
 def page_posts_index():
-    """ Страница для отображения всех постов """
+    """
+    Страница для отображения всех постов
+    """
     all_posts = post_dao.get_all_posts()
     return render_template("posts_index.html", posts=all_posts)
 
 
 @bp_posts.route("/posts/<int:pk>/")
 def page_posts_single(pk: int):
-    """ Страница для отображения одного поста """
+    """
+    Страница для отображения одного поста
+    """
     post: Post | None = post_dao.get_by_pk(pk)
     comments: list[Comment] = comment_dao.get_comments_by_post_pk(pk)
     if post is None:
-        # api_logger.debug(f"Referring to a non-existent comment '{pk}'")
+        api_logger.debug(f"Referring to a non-existent comment '{pk}'")
         abort(404)
     return render_template("post_single.html", post=post, comments=comments, comments_len=len(comments))
 
 
 @bp_posts.route("/users/<user_name>")
 def page_posts_by_user(user_name: str):
-    """ Страница для отображения всех постов пользователя """
+    """
+    Страница для отображения всех постов пользователя
+    """
     posts: list[Post] = post_dao.get_by_poster(user_name)
     if not posts:
         api_logger.error(f"Error when searching by name '{user_name}'")
@@ -54,7 +60,9 @@ def page_posts_by_user(user_name: str):
 
 @bp_posts.route("/search/")
 def page_posts_search():
-    """ Страница для отображения результата поиска """
+    """
+    Страница для отображения результата поиска
+    """
     string: str = request.args.get("s", "")
     if string == "":
         posts: list = []

@@ -7,14 +7,17 @@ from exceptions.exceptions_data import DataSourceError
 
 class PostDAO:
     """ Менеджер постов для:
-    load_data, load_posts get_all_posts,
-    get_by_pk, search_in_content, get_by_poster """
+    'load_data', 'load_posts' 'get_all_posts',
+    'get_by_pk', 'search_in_content', 'get_by_poster'
+    """
 
     def __init__(self, path):
         self.path = path
 
     def load_data(self):
-        """ Загружает данные из JSON и возвращает список словарей"""
+        """
+        Загружает данные из 'JSON' и возвращает список словарей
+        """
         try:
             with open(self.path, 'r', encoding='utf-8') as file:
                 posts_data = json.load(file)
@@ -23,18 +26,25 @@ class PostDAO:
         return posts_data
 
     def load_posts(self):
-        """ Загружает данные из JSON и возвращает список экземпляров posts """
+        """
+        Загружает данные из 'JSON' и возвращает список экземпляров 'posts'
+        """
         posts_data = self.load_data()
         list_of_posts = [Post(**post_data) for post_data in posts_data]
+
         return list_of_posts
 
     def get_all_posts(self):
-        """ Получаем все посты """
+        """
+        Получаем все посты
+        """
         posts = self.load_posts()
         return posts
 
     def get_by_pk(self, pk):
-        """ Получаем пост по его pk """
+        """
+        Получаем пост по его 'pk'
+        """
         if type(pk) != int:
             raise TypeError("pk must be an pk")
 
@@ -44,7 +54,9 @@ class PostDAO:
                 return post
 
     def search_in_content(self, substring):
-        """ Поиск постов где в контенте встречается substring """
+        """
+        Поиск постов где в контенте встречается substring
+        """
         if type(substring) != str:
             raise TypeError("substring must be an str")
 
@@ -54,7 +66,9 @@ class PostDAO:
         return required_post
 
     def get_by_poster(self, user_name):
-        """ Поиск постов где в контенте встречается user_name """
+        """
+        Поиск постов где в контенте встречается 'user_name'
+        """
         if type(user_name) != str:
             raise TypeError("user_name must be an str")
 

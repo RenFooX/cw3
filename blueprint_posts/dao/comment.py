@@ -1,5 +1,7 @@
 class Comment:
-    """ Абстракция для комментаниев """
+    """
+    Абстракция комментариев для использования в DAO
+    """
 
     def __init__(self, pk=0, post_id=0, commenter_name="", comment=""):
         self.pk = pk
@@ -14,3 +16,12 @@ class Comment:
                f"{self.commenter_name}, " \
                f"{self.comment} ," \
                f")"
+
+    def as_dict(self):
+        dict_dat = {
+            "comment": self.comment,
+            "commenter_name": self.commenter_name,
+            "post_pk": self.post_pk,
+            "pk": self.pk,
+        }
+        return dict_dat

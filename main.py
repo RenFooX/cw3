@@ -10,6 +10,7 @@ from exceptions.exceptions_data import DataSourceError
 def create_and_config_app(config_path):
 
     app = Flask(__name__)
+    app.config["JSON_AS_ASCII"] = False
 
     app.register_blueprint(bp_posts)
     app.register_blueprint(bp_api, url_prefix='/api')
@@ -18,8 +19,6 @@ def create_and_config_app(config_path):
 
     config_loggers.config(app)
 
-    app.config['JSON_AS_ASCII'] = False
-    app.config['JSON_SORT_KEYS'] = False
     return app
 
 

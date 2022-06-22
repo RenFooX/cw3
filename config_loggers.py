@@ -5,7 +5,7 @@ def config(app):
     api_logger = logging.getLogger("api_logger")
     api_logger.setLevel(logging.DEBUG)
 
-    api_logger_handler = logging.FileHandler(filename=app.config["LOGGER_API_PATH"])
+    api_logger_handler = logging.FileHandler(filename=app.config["LOGGER_API_PATH"], encoding='utf-8')
     api_logger_handler.setLevel(logging.DEBUG)
     api_logger.addHandler(api_logger_handler)
 

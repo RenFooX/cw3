@@ -5,3 +5,10 @@
 2022-06-21 22:08:08,661 - [DEBUG] -.api_logger - (views.py).api_posts_all(42) - All posts requested
 2022-06-21 22:08:40,514 - [DEBUG] -.api_logger - (views.py).api_posts_all(42) - All posts requested
 2022-06-21 22:08:42,378 - [DEBUG] -.api_logger - (views.py).api_posts_single(53) - Appeal to the post '2'
+2022-06-22 22:43:42,343 - [DEBUG] -.api_logger - (views.py).api_posts_all(39) - All posts requested
+2022-06-22 22:44:07,099 - [DEBUG] -.api_logger - (views.py).api_posts_all(39) - All posts requested
+2022-06-22 22:44:59,344 - [DEBUG] -.api_logger - (views.py).api_posts_all(39) - All posts requested
+2022-06-22 22:44:59,349 - [DEBUG] -.api_logger - (views.py).api_posts_all(39) - All posts requested
+2022-06-22 22:45:52,125 - [DEBUG] -.api_logger - (views.py).api_posts_all(39) - All posts requested
+2022-06-22 22:45:52,129 - [DEBUG] -.api_logger - (views.py).api_posts_all(39) - All posts requested
+2022-06-22 22:45:52,138 - [ERROR] -.api_logger - (views.py).api_error_404(56) - An error has occurred '404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.'
